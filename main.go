@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"sync"
 
+	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,7 +20,7 @@ var (
 func main() {
 	// Use of gin Framework
 	r := gin.Default()
-
+	r.Use(cors.Default())
 	r.POST("/game", createGame)
 	r.GET("/game/:id", getGame)
 	r.POST("/game/:id/move", playMove)
@@ -51,7 +52,7 @@ func getGame(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, g)
+	c.JSON(http.StatusOK, *g)
 }
 
 // POST /game/:id/move : Play a move
@@ -81,5 +82,5 @@ func playMove(c *gin.Context) {
 		return
 	}
 
-	c.JSON(http.StatusOK, g)
+	c.JSON(http.StatusOK, *g)
 }

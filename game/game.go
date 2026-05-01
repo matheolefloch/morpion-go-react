@@ -3,50 +3,50 @@ package game
 import "errors"
 
 type Game struct {
-	board   [3][3]int // 0 : empty, 1 : X, 2 : O
-	current int       // X : 1, O : 2
-	winner  int
-	over    bool
+	Board   [3][3]int `json:"Board"`   // 0 : empty, 1 : X, 2 : O
+	Current int       `json:"Current"` // X : 1, O : 2
+	Winner  int       `json:"Winner"`
+	Over    bool      `json:"Over"`
 }
 
 func New() *Game {
-	return &Game{current: 1}
+	return &Game{Current: 1}
 }
 
 func (g *Game) Play(row, col int) error {
-	if g.over {
+	if g.Over {
 		return errors.New("la partie est terminée")
 	}
 	if row < 0 || row > 2 || col < 0 || col > 2 {
 		return errors.New("case invalide")
 	}
-	if g.board[row][col] != 0 {
+	if g.Board[row][col] != 0 {
 		return errors.New("case déjà prise")
 	}
 
-	g.board[row][col] = g.current
+	g.Board[row][col] = g.Current
 	g.checkWinner()
 
-	if !g.over {
+	if !g.Over {
 		g.switchPlayer()
 	}
 	return nil
 }
 
 func (g *Game) switchPlayer() {
-	g.current = 3 - g.current
+	g.Current = 3 - g.Current
 }
 
 func (g *Game) checkWinner() {
 	winner := g.getWinner()
 	if winner != 0 {
-		g.winner = winner
-		g.over = true
+		g.Winner = winner
+		g.Over = true
 		return
 	}
 
 	full := true
-	for _, row := range g.board {
+	for _, row := range g.Board {
 		for _, cell := range row {
 			if cell == 0 {
 				full = false
@@ -58,12 +58,12 @@ func (g *Game) checkWinner() {
 	}
 
 	if full {
-		g.over = true
+		g.Over = true
 	}
 }
 
 func (g *Game) getWinner() int {
-	b := g.board
+	b := g.Board
 
 	for i := 0; i < 3; i++ {
 		// Lines
