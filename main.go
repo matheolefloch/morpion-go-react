@@ -17,7 +17,7 @@ var (
 )
 
 func main() {
-	// Use of gin lib
+	// Use of gin Framework
 	r := gin.Default()
 
 	r.POST("/game", createGame)
@@ -38,7 +38,7 @@ func createGame(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{"id": id})
 }
 
-// GET /game/:id → état de la partie
+// GET /game/:id : Get the state of the game
 func getGame(c *gin.Context) {
 	id := c.Param("id")
 
@@ -47,14 +47,14 @@ func getGame(c *gin.Context) {
 	mu.Unlock()
 
 	if !ok {
-		c.JSON(http.StatusNotFound, gin.H{"error": "partie introuvable"})
+		c.JSON(http.StatusNotFound, gin.H{"error": "Partie introuvable"})
 		return
 	}
 
 	c.JSON(http.StatusOK, g)
 }
 
-// POST /game/:id/move → jouer un coup
+// POST /game/:id/move : Play a move
 func playMove(c *gin.Context) {
 	id := c.Param("id")
 
