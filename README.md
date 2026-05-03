@@ -1,10 +1,10 @@
-# 🎮 Morpion — Go + React
+# Morpion — Go + React
 
 Un morpion fullstack développé en **Go** (backend) et **React** (frontend), réalisé comme projet d'apprentissage pour découvrir l'écosystème Go.
 
 ---
 
-## 🚀 Stack technique
+## Stack technique
 
 | Côté | Techno |
 |------|--------|
@@ -14,7 +14,7 @@ Un morpion fullstack développé en **Go** (backend) et **React** (frontend), r�
 
 ---
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 morpion/
@@ -28,7 +28,7 @@ morpion/
 
 ---
 
-## ⚙️ Lancer le projet
+## Lancer le projet
 
 ### Prérequis
 
@@ -47,7 +47,7 @@ go mod tidy
 
 # Lancer le serveur
 go run main.go
-# → API disponible sur http://localhost:8080
+# API disponible sur http://localhost:8080
 ```
 
 ### Frontend
@@ -67,14 +67,14 @@ go test ./game/...
 
 ---
 
-## 🎯 Fonctionnalités
+## Fonctionnalités
 
 - Partie en local à deux joueurs (X et O)
 - Détection automatique de la victoire et du match nul
 - Réinitialisation de la partie
 - API REST pour interagir avec la logique du jeu
 
-## 🔌 API
+## API
 
 | Méthode | Route | Description |
 |---------|-------|-------------|
@@ -92,7 +92,7 @@ curl -X POST http://localhost:8080/game/1/move \
 
 ---
 
-## 📖 Ce que j'ai appris
+## Ce que j'ai appris
 
 - Structurer un projet Go en packages
 - Créer une API REST avec **Gin**
@@ -100,7 +100,7 @@ curl -X POST http://localhost:8080/game/1/move \
 - Écrire des **tests unitaires** avec le package `testing`
 - Connecter un frontend React à une API
 
-## 🔮 Améliorations possibles
+## Améliorations possibles
 
 - Multijoueur en temps réel avec **WebSockets** (goroutines + channels)
 - Persistance des parties en base de données (PostgreSQL)
@@ -109,8 +109,7 @@ curl -X POST http://localhost:8080/game/1/move \
 
 ---
 
-## 👤 Auteur
+## Auteur
 
-**Ton Nom** — [github.com/ton-pseudo](https://github.com/ton-pseudo)
+**Le Floch Mathéo** — [github.com/matheolefloch](https://github.com/matheolefloch)
 
-> Projet réalisé en 2 jours dans le cadre d'un apprentissage de Go pour une candidature de stage.
