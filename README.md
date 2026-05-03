@@ -39,8 +39,8 @@ morpion/
 
 ```bash
 # Cloner le projet
-git clone https://github.com/ton-pseudo/morpion
-cd morpion
+git clone https://github.com/matheolefloch/morpion-go-react.git
+cd morpion-go-react
 
 # Installer les dépendances Go
 go mod tidy
