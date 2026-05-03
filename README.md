@@ -1,4 +1,4 @@
-# Morpion — Go + React
+# Morpion - Go + React
 
 Un morpion fullstack développé en **Go** (backend) et **React** (frontend), réalisé comme projet d'apprentissage pour découvrir l'écosystème Go.
 
@@ -82,7 +82,7 @@ go test ./game/...
 | `GET` | `/game/:id` | Récupérer l'état d'une partie |
 | `POST` | `/game/:id/move` | Jouer un coup |
 
-**Exemple — jouer un coup :**
+**Exemple - jouer un coup :**
 
 ```bash
 curl -X POST http://localhost:8080/game/1/move \
@@ -111,5 +111,5 @@ curl -X POST http://localhost:8080/game/1/move \
 
 ## Auteur
 
-**Le Floch Mathéo** — [github.com/matheolefloch](https://github.com/matheolefloch)
+**Le Floch Mathéo** - [github.com/matheolefloch](https://github.com/matheolefloch)
 
